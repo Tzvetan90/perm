@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul 13 10:55:54 2015
+
+@author: Stefano
+"""
+from math import factorial
+from itertools import permutations
+with open('rosalind_perm.txt','r') as inp:
+    n=int(inp.readline().strip())
+    nump=factorial(n)
+    l=range(1,n+1)
+    perm=list(permutations(l,n))
+with open('outputperm.txt','w') as out:
+    out.write(str(nump)+'\n')
+    for i in perm:
+        out.write(str(i).strip('(').strip(')').replace(',','')+('\n'))
